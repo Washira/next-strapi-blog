@@ -1,3 +1,6 @@
+import { Post } from '@/app/utils/interface'
+import PostPage from '@/app/blog/[id]/PostPage'
+
 const fetchPost = async (id: string) => {
   const options = {
     method: 'GET',
@@ -18,24 +21,17 @@ const fetchPost = async (id: string) => {
   }
 }
 
-const PostPage = async ({
+const Page = async ({
   params,
   searchParams,
 }: {
   params: { id: string }
   searchParams: { [key: string]: string | string[] | undefined }
 }) => {
-  const post = await fetchPost(params.id)
-  console.log(`post`, post)
+  const post: Post = await fetchPost(params.id)
+  console.log(`post on page: `, post)
 
-  return (
-    <div>
-      <h1>Post Page</h1>
-      <div>
-        <p>Post content goes here</p>
-      </div>
-    </div>
-  )
+  return <PostPage post={post} />
 }
 
-export default PostPage
+export default Page

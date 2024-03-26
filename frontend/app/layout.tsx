@@ -1,30 +1,25 @@
-import type { Metadata } from 'next'
+'use client'
+
 import { Inter } from 'next/font/google'
 import './globals.css'
 import NavBar from '@/app/components/NavBar'
 import Footer from '@/app/components/Footer'
-import Provider from '@/app/utils/Provider'
+import useTheme from '@/app/store/theme'
 
 const inter = Inter({ subsets: ['latin'] })
-
-export const metadata: Metadata = {
-  title: 'Next Sanity Blog',
-  description: 'Blog Website using Next.js and Sanity.io',
-}
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const theme = useTheme((state: any) => state.theme)
   return (
-    <html lang='en'>
+    <html lang='en' data-theme={theme}>
       <body className={inter.className}>
-        <Provider>
-          <NavBar />
-          <div>{children}</div>
-          <Footer />
-        </Provider>
+        <NavBar />
+        {children}
+        <Footer />
       </body>
     </html>
   )

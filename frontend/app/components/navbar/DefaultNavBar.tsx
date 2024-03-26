@@ -5,9 +5,9 @@ import ThemeSwap from '@/app/components/navbar/theme-controller/ThemeSwap'
 
 const DefaultNavBar = () => {
   return (
-    <div className='navbar bg-base-100 container hidden lg:flex'>
+    <div className='navbar bg-base-100 container hidden lg:flex px-0'>
       <div className='navbar-start'>
-        <Link href='/' className='btn btn-ghost text-xl'>
+        <Link href='/' className='text-xl'>
           Next Sanity Blog
         </Link>
       </div>

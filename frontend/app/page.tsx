@@ -1,6 +1,12 @@
 import Image from 'next/image'
+import type { Metadata } from 'next'
 import Hero from '@/app/components/Hero'
 import ArticleCard from '@/app/components/ArticleCard'
+
+export const metadata: Metadata = {
+  title: 'Next Sanity Blog',
+  description: 'Blog Website using Next.js and Sanity.io',
+}
 
 async function fetchCategories() {
   const options = {
