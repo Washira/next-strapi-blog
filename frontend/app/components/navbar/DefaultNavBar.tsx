@@ -18,7 +18,7 @@ const DefaultNavBar = () => {
               {item?.subdirectory ? (
                 <details>
                   <summary>{item.title}</summary>
-                  <ul className='p-2 menu-md w-56'>
+                  <ul className='p-2 menu-md w-56 z-10'>
                     {item.subdirectory.map((subItem) => (
                       <li key={subItem.title}>
                         <Link href={subItem ? subItem.url : '#'}>

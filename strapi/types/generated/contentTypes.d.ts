@@ -801,7 +801,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String & Attribute.Required & Attribute.Unique;
-    description: Attribute.Blocks;
+    content: Attribute.Blocks;
     img: Attribute.Media;
     categories: Attribute.Relation<
       'api::blog.blog',

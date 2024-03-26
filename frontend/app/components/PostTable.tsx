@@ -1,17 +1,21 @@
-const PostTable = () => {
+import Link from 'next/link'
+
+const PostTable = ({ data }: any) => {
+  const posts = data?.data
+
   return (
     <div className='overflow-x-auto'>
       <table className='table'>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Job</th>
-            <th>Favorite Color</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Category</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item, i) => {
+          {posts.map((item: any, i: string) => {
             return (
               <tr key={i}>
                 <td>
@@ -40,14 +44,16 @@ const PostTable = () => {
                 </td>
                 <td>Purple</td>
                 <th>
-                  <button className='btn btn-ghost btn-xs'>details</button>
+                  <Link href={`/blog/${item.id}`}>
+                    <button className='btn btn-ghost btn-xs'>read</button>
+                  </Link>
                 </th>
               </tr>
             )
           })}
         </tbody>
         {/* foot */}
-        <tfoot>
+        {/* <tfoot>
           <tr>
             <th></th>
             <th>Name</th>
@@ -55,7 +61,7 @@ const PostTable = () => {
             <th>Favorite Color</th>
             <th></th>
           </tr>
-        </tfoot>
+        </tfoot> */}
       </table>
     </div>
   )
