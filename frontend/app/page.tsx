@@ -2,7 +2,30 @@ import Image from 'next/image'
 import Hero from '@/app/components/Hero'
 import ArticleCard from '@/app/components/ArticleCard'
 
-export default function Home() {
+async function fetchCategories() {
+  const options = {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+    },
+  }
+
+  try {
+    const res = await fetch(
+      `${process.env.STRAPI_API_URL}/api/categories`,
+      options
+    )
+    const data = await res.json()
+    return data
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+export default async function Home() {
+  const categories = await fetchCategories()
+  console.log(`categories`, categories)
+
   return (
     <div>
       <Hero />
@@ -18,7 +41,9 @@ export default function Home() {
         </div>
         <div className='card lg:card-side bg-base-100 shadow-xl'>
           <figure>
-            <img
+            <Image
+              width={400}
+              height={400}
               src='https://daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.jpg'
               alt='Album'
             />

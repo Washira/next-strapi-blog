@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import menu from '@/app/utils/menu'
 import ThemeToggle from '@/app/components/navbar/theme-controller/ThemeToggle'
 
 const CompactNavBar = () => {
@@ -30,23 +31,26 @@ const CompactNavBar = () => {
             <li>
               <ThemeToggle />
             </li>
-            <li>
-              <Link href='#'>Item 1</Link>
-            </li>
-            <li>
-              <Link href='#'>Parent</Link>
-              <ul className='p-2'>
-                <li>
-                  <Link href='#'>Submenu 1</Link>
-                </li>
-                <li>
-                  <Link href='#'>Submenu 2</Link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <Link href='#'>Item 3</Link>
-            </li>
+            {menu.map((item) => (
+              <li key={item.title}>
+                {item?.subdirectory ? (
+                  <details>
+                    <summary>{item.title}</summary>
+                    <ul className='p-2'>
+                      {item.subdirectory.map((subItem) => (
+                        <li key={subItem.title}>
+                          <Link href={subItem ? subItem.url : '#'}>
+                            {subItem.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                ) : (
+                  <Link href={item.url ? item.url : '#'}>{item.title}</Link>
+                )}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
