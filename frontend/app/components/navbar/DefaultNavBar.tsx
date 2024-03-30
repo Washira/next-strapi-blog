@@ -5,8 +5,7 @@ import ThemeSwap from '@/app/components/navbar/theme-controller/ThemeSwap'
 import LocaleDropdown from '@/app/components/navbar/switch-locale/LocaleDropdown'
 
 const DefaultNavBar = ({ params }: { params: { locale: string } }) => {
-  // console.log('params', params)
-  const t = useTranslations('Index')
+  const t = useTranslations('navbar')
   const lang = 'en'
   return (
     <div className='navbar bg-base-100 container hidden lg:flex px-0'>
@@ -15,34 +14,39 @@ const DefaultNavBar = ({ params }: { params: { locale: string } }) => {
           {t('title')}
         </Link>
       </div>
-      <div className='navbar-center flex'>
-        <ul className='menu menu-horizontal px-1'>
+      <div className='navbar-center'>
+        <div className='px-1 flex items-center gap-4'>
           {menu.map((item) => (
-            <li key={item.title}>
+            <div key={item.title}>
               {item?.subdirectory ? (
-                <details>
-                  <summary>{item.title}</summary>
-                  <ul className='p-2 menu-md w-56 z-10'>
+                <div className='dropdown dropdown-end'>
+                  <div role='button' tabIndex={0} className='m-1'>
+                    {t(`${item.title}`)}
+                  </div>
+                  <ul
+                    tabIndex={0}
+                    className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52'
+                  >
                     {item.subdirectory.map((subItem) => (
                       <li key={subItem.title}>
                         <Link href={subItem ? `/${lang}${subItem.url}` : '#'}>
-                          {subItem.title}
+                          {t(`${subItem.title}`)}
                         </Link>
                       </li>
                     ))}
                   </ul>
-                </details>
+                </div>
               ) : (
                 <Link href={item.url ? `/${lang}${item.url}` : '#'}>
-                  {item.title}
+                  {t(`${item.title}`)}
                 </Link>
               )}
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
-      <LocaleDropdown />
       <div className='navbar-end'>
+        <LocaleDropdown />
         <ThemeSwap />
       </div>
     </div>

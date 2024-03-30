@@ -1,10 +1,10 @@
 const menu = [
   {
-    title: 'Blog',
+    title: 'blog',
     url: '/blog',
   },
   {
-    title: 'About',
+    title: 'about',
     url: '/about',
     subdirectory: [
       {
@@ -18,7 +18,7 @@ const menu = [
     ],
   },
   {
-    title: 'Contact',
+    title: 'contact',
     url: '/contact',
   },
 ]

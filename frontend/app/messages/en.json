@@ -1,7 +1,14 @@
 {
   "Index": {
-    "cart": "Add to Cart",
     "title": "Next Strapi Blog",
+    "": ""
+  },
+  "navbar": {
+    "title": "Next Strapi Blog",
+    "blog": "Blog",
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
     "": ""
   },
   "": ""

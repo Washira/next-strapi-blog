@@ -2,10 +2,10 @@ import Link from 'next/link'
 import menu from '@/app/utils/menu'
 import ThemeToggle from '@/app/components/navbar/theme-controller/ThemeToggle'
 import { useTranslations } from 'next-intl'
-import LocaleDropdown from '@/app/components/navbar/switch-locale/LocaleDropdown'
+import LocaleToggle from '@/app/components/navbar/switch-locale/LocaleToggle'
 
 const CompactNavBar = ({ params }: { params: { locale: string } }) => {
-  const t = useTranslations('Index')
+  const t = useTranslations('navbar')
 
   const lang = 'en'
   return (
@@ -32,19 +32,16 @@ const CompactNavBar = ({ params }: { params: { locale: string } }) => {
             tabIndex={0}
             className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
           >
-            <li>
-              <ThemeToggle />
-            </li>
             {menu.map((item) => (
               <li key={item.title}>
                 {item?.subdirectory ? (
                   <details>
-                    <summary>{item.title}</summary>
+                    <summary>{t(`${item.title}`)}</summary>
                     <ul className='p-2'>
                       {item.subdirectory.map((subItem) => (
                         <li key={subItem.title}>
                           <Link href={subItem ? `/${lang}${subItem.url}` : '#'}>
-                            {subItem.title}
+                            {t(`${subItem.title}`)}
                           </Link>
                         </li>
                       ))}
@@ -52,13 +49,16 @@ const CompactNavBar = ({ params }: { params: { locale: string } }) => {
                   </details>
                 ) : (
                   <Link href={item.url ? `/${lang}${item.url}` : '#'}>
-                    {item.title}
+                    {t(`${item.title}`)}
                   </Link>
                 )}
               </li>
             ))}
             <li>
-              <LocaleDropdown />
+              <ThemeToggle />
+            </li>
+            <li>
+              <LocaleToggle />
             </li>
           </ul>
         </div>
