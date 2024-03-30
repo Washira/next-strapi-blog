@@ -8,12 +8,12 @@ const menu = [
     url: '/about',
     subdirectory: [
       {
-        title: 'About Me',
-        url: '/about/me',
+        title: 'profile',
+        url: '/about/profile',
       },
       {
-        title: 'About Us',
-        url: '/about/us',
+        title: 'hire',
+        url: '/about/hire',
       },
     ],
   },

@@ -12,7 +12,7 @@ const LocaleToggle = () => {
   const handleLocaleChange = (e: any) => {
     // const locale = e.target.value
     const locale = locales[locales.indexOf(lang) === 0 ? 1 : 0]
-    console.log('locale', locale)
+    // console.log('locale', locale)
 
     // slice the locale from the pathname
     const newUrl = pathname.replace(/^\/[a-z]{2}/, `/${locale}`)
