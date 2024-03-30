@@ -5,8 +5,8 @@ import ThemeSwap from '@/app/components/navbar/theme-controller/ThemeSwap'
 import LocaleDropdown from '@/app/components/navbar/switch-locale/LocaleDropdown'
 
 const DefaultNavBar = ({ params }: { params: { locale: string } }) => {
+  const { locale } = params
   const t = useTranslations('navbar')
-  const lang = 'en'
   return (
     <div className='navbar bg-base-100 container hidden lg:flex px-0'>
       <div className='navbar-start'>
@@ -29,7 +29,7 @@ const DefaultNavBar = ({ params }: { params: { locale: string } }) => {
                   >
                     {item.subdirectory.map((subItem) => (
                       <li key={subItem.title}>
-                        <Link href={subItem ? `/${lang}${subItem.url}` : '#'}>
+                        <Link href={subItem ? `/${locale}${subItem.url}` : '#'}>
                           {t(`${subItem.title}`)}
                         </Link>
                       </li>
@@ -37,7 +37,7 @@ const DefaultNavBar = ({ params }: { params: { locale: string } }) => {
                   </ul>
                 </div>
               ) : (
-                <Link href={item.url ? `/${lang}${item.url}` : '#'}>
+                <Link href={item.url ? `/${locale}${item.url}` : '#'}>
                   {t(`${item.title}`)}
                 </Link>
               )}

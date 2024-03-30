@@ -5,9 +5,8 @@ import { useTranslations } from 'next-intl'
 import LocaleToggle from '@/app/components/navbar/switch-locale/LocaleToggle'
 
 const CompactNavBar = ({ params }: { params: { locale: string } }) => {
+  const { locale } = params
   const t = useTranslations('navbar')
-
-  const lang = 'en'
   return (
     <div className='navbar bg-base-100 container lg:hidden'>
       <div className='navbar-start'>
@@ -40,7 +39,9 @@ const CompactNavBar = ({ params }: { params: { locale: string } }) => {
                     <ul className='p-2'>
                       {item.subdirectory.map((subItem) => (
                         <li key={subItem.title}>
-                          <Link href={subItem ? `/${lang}${subItem.url}` : '#'}>
+                          <Link
+                            href={subItem ? `/${locale}${subItem.url}` : '#'}
+                          >
                             {t(`${subItem.title}`)}
                           </Link>
                         </li>
@@ -48,7 +49,7 @@ const CompactNavBar = ({ params }: { params: { locale: string } }) => {
                     </ul>
                   </details>
                 ) : (
-                  <Link href={item.url ? `/${lang}${item.url}` : '#'}>
+                  <Link href={item.url ? `/${locale}${item.url}` : '#'}>
                     {t(`${item.title}`)}
                   </Link>
                 )}
@@ -64,7 +65,9 @@ const CompactNavBar = ({ params }: { params: { locale: string } }) => {
         </div>
       </div>
       <div className='navbar-end'>
-        <a className='btn btn-ghost text-xl'>{t('title')}</a>
+        <Link href='/' className='text-xl'>
+          {t('title')}
+        </Link>
       </div>
     </div>
   )
