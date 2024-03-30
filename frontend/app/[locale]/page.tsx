@@ -8,30 +8,7 @@ export const metadata: Metadata = {
   description: 'Blog Website using Next.js and Sanity.io',
 }
 
-async function fetchCategories() {
-  const options = {
-    method: 'GET',
-    headers: {
-      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
-    },
-  }
-
-  try {
-    const res = await fetch(
-      `${process.env.STRAPI_API_URL}/api/categories`,
-      options
-    )
-    const data = await res.json()
-    return data
-  } catch (err) {
-    console.error(err)
-  }
-}
-
-export default async function Home() {
-  const categories = await fetchCategories()
-  console.log(`categories`, categories)
-
+export default function Home() {
   return (
     <div>
       <Hero />

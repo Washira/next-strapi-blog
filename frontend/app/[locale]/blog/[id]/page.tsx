@@ -1,5 +1,5 @@
 import { Post } from '@/app/utils/interface'
-import PostPage from '@/app/blog/[id]/PostPage'
+import PostPage from '@/app/[locale]/blog/[id]/PostPage'
 
 const fetchPost = async (id: string) => {
   const options = {

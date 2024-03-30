@@ -1,9 +1,10 @@
 'use client'
 
 import useTheme from '@/app/store/theme'
+import { setCookie } from 'cookies-next'
 
 const ThemeToggle = () => {
-  const { theme, themeList } = useTheme((state: any) => state)
+  const { theme, themeList, changeTheme } = useTheme((state: any) => state)
   return (
     <label className='flex cursor-pointer gap-2'>
       <svg
@@ -29,7 +30,8 @@ const ThemeToggle = () => {
           // switch to another theme in the list
           const nextTheme =
             themeList[(themeList.indexOf(theme) + 1) % themeList.length]
-          useTheme.setState({ theme: nextTheme })
+          setCookie('theme', nextTheme)
+          changeTheme(nextTheme)
         }}
       />
       <svg

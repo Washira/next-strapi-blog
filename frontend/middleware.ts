@@ -1,33 +1,15 @@
-import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
-// import { match } from '@formatjs/intl-localematcher'
-import Negotiator from 'negotiator'
+import createMiddleware from 'next-intl/middleware'
+import { locales, defaultLocale } from '@/i18n'
 
-// let headers = { 'accept-language': 'en-US,en;q=0.5' }
-// let languages = new Negotiator({ headers }).languages()
-let locales = ['th', 'en-US']
-// let defaultLocale = 'en-US'
+export default createMiddleware({
+  // A list of all locales that are supported
+  locales,
 
-// match(languages, locales, defaultLocale) // -> 'th'
-
-// This function can be marked `async` if using `await` inside
-export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl
-  const pathnameHasLocale = locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
-  )
-  if (pathnameHasLocale) return
-
-  //   // Redirect if there is no locale
-  //   const locale = getLocale(request)
-  //   request.nextUrl.pathname = `/${locale}${pathname}`
-  //   // e.g. incoming request is /products
-  //   // The new URL is now /en-US/products
-  //   return NextResponse.redirect(request.nextUrl)
-  // }
-  //   return NextResponse.redirect(new URL('/', request.url))
-}
+  // Used when no locale matches
+  defaultLocale,
+})
 
 export const config = {
-  matcher: '/about/:path*',
+  // Match only internationalized pathnames
+  matcher: ['/', '/(th|en)/:path*'],
 }

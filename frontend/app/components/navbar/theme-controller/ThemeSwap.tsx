@@ -1,9 +1,10 @@
 'use client'
 
 import useTheme from '@/app/store/theme'
+import { setCookie } from 'cookies-next'
 
 const ThemeSwap = () => {
-  const { theme, themeList } = useTheme((state: any) => state)
+  const { theme, themeList, changeTheme } = useTheme((state: any) => state)
   return (
     <label className='swap swap-rotate'>
       {/* this hidden checkbox controls the state */}
@@ -16,7 +17,8 @@ const ThemeSwap = () => {
           // switch to another theme in the list
           const nextTheme =
             themeList[(themeList.indexOf(theme) + 1) % themeList.length]
-          useTheme.setState({ theme: nextTheme })
+          setCookie('theme', nextTheme)
+          changeTheme(nextTheme)
         }}
       />
 

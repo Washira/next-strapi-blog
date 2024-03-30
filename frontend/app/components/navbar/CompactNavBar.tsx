@@ -1,9 +1,13 @@
-import React from 'react'
 import Link from 'next/link'
 import menu from '@/app/utils/menu'
 import ThemeToggle from '@/app/components/navbar/theme-controller/ThemeToggle'
+import { useTranslations } from 'next-intl'
+import LocaleDropdown from '@/app/components/navbar/switch-locale/LocaleDropdown'
 
-const CompactNavBar = () => {
+const CompactNavBar = ({ params }: { params: { locale: string } }) => {
+  const t = useTranslations('Index')
+
+  const lang = 'en'
   return (
     <div className='navbar bg-base-100 container lg:hidden'>
       <div className='navbar-start'>
@@ -39,7 +43,7 @@ const CompactNavBar = () => {
                     <ul className='p-2'>
                       {item.subdirectory.map((subItem) => (
                         <li key={subItem.title}>
-                          <Link href={subItem ? subItem.url : '#'}>
+                          <Link href={subItem ? `/${lang}${subItem.url}` : '#'}>
                             {subItem.title}
                           </Link>
                         </li>
@@ -47,15 +51,20 @@ const CompactNavBar = () => {
                     </ul>
                   </details>
                 ) : (
-                  <Link href={item.url ? item.url : '#'}>{item.title}</Link>
+                  <Link href={item.url ? `/${lang}${item.url}` : '#'}>
+                    {item.title}
+                  </Link>
                 )}
               </li>
             ))}
+            <li>
+              <LocaleDropdown />
+            </li>
           </ul>
         </div>
       </div>
       <div className='navbar-end'>
-        <a className='btn btn-ghost text-xl'>Next Sanity Blog</a>
+        <a className='btn btn-ghost text-xl'>{t('title')}</a>
       </div>
     </div>
   )
