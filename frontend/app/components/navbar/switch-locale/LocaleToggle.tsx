@@ -2,6 +2,8 @@
 
 import { useRouter, usePathname } from 'next/navigation'
 import { defaultLocale, locales } from '@/i18n'
+import Thai from '@/app/components/navbar/switch-locale/icons/Thai'
+import English from '@/app/components/navbar/switch-locale/icons/English'
 
 const LocaleToggle = () => {
   const router = useRouter()
@@ -20,7 +22,7 @@ const LocaleToggle = () => {
 
   return (
     <label className='flex cursor-pointer gap-2 text-sm'>
-      <div className='badge badge-outline badge-xs'>Th</div>
+      <Thai />
       <input
         type='checkbox'
         value='synthwave'
@@ -28,7 +30,7 @@ const LocaleToggle = () => {
         checked={lang !== defaultLocale}
         onChange={handleLocaleChange}
       />
-      <div className='badge badge-outline badge-xs'>En</div>
+      <English />
     </label>
   )
 }
