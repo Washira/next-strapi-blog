@@ -1,7 +1,7 @@
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 import menu from '@/app/utils/menu'
 import ThemeToggle from '@/app/components/navbar/theme-controller/ThemeToggle'
-import { useTranslations } from 'next-intl'
 import LocaleToggle from '@/app/components/navbar/switch-locale/LocaleToggle'
 
 const CompactNavBar = ({ params }: { params: { locale: string } }) => {

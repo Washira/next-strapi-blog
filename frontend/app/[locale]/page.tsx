@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import type { Metadata } from 'next'
 import Hero from '@/app/components/Hero'
-import ArticleCard from '@/app/components/ArticleCard'
+import BlogCard from '@/app/components/BlogCard'
 
 export const metadata: Metadata = {
   title: 'Next Sanity Blog',
@@ -17,10 +17,10 @@ export default function Home() {
           <h2 className='text-2xl font-semibold'>Recent Articles</h2>
         </div>
         <div className='flex gap-4 flex-col lg:grid grid-cols-2 my-4 px-4 sm:px-0'>
-          <ArticleCard />
-          <ArticleCard />
-          <ArticleCard />
-          <ArticleCard />
+          <BlogCard />
+          <BlogCard />
+          <BlogCard />
+          <BlogCard />
         </div>
         <div className='card lg:card-side bg-base-100 shadow-xl'>
           <figure>

@@ -1,4 +1,4 @@
-const ArticleCard = () => {
+const BlogCard = () => {
   return (
     <div className='card sm:card-side bg-base-100 shadow-xl'>
       <figure>
@@ -26,4 +26,4 @@ const ArticleCard = () => {
   )
 }
 
-export default ArticleCard
+export default BlogCard
