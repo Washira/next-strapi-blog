@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import Hero from '@/app/components/Hero'
 import BlogCard from '@/app/components/BlogCard'
 
@@ -9,6 +10,8 @@ export const metadata: Metadata = {
 }
 
 export default function Home() {
+  // console.log(notFound())
+
   return (
     <div>
       <Hero />

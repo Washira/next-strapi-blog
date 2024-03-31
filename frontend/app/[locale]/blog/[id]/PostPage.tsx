@@ -1,4 +1,4 @@
-import { Post } from '@/app/utils/interface'
+import { Post } from '@/app/[locale]/utils/interface'
 
 const PostPage = ({ post }: { post: Post }) => {
   const { title, content, img, categories } = post.data.attributes

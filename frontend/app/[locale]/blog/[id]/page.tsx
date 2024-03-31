@@ -1,4 +1,4 @@
-import { Post } from '@/app/utils/interface'
+import { Post } from '@/app/[locale]/utils/interface'
 import PostPage from '@/app/[locale]/blog/[id]/PostPage'
 
 const fetchPost = async (id: string) => {

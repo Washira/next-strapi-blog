@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
-import menu from '@/app/utils/menu'
+import menu from '@/app/[locale]/utils/menu'
 import ThemeSwap from '@/app/components/navbar/theme-controller/ThemeSwap'
 import LocaleDropdown from '@/app/components/navbar/switch-locale/LocaleDropdown'
 
