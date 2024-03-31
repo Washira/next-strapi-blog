@@ -4,7 +4,7 @@ const Page = () => {
   // console.log('Contact Page')
 
   return (
-    <div className='container'>
+    <div className='container h-svh'>
       <ContactPage />
     </div>
   )

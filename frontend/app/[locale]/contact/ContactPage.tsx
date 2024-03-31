@@ -5,7 +5,10 @@ const ContactPage = () => {
         <div className='mockup-browser-toolbar'>
           <div className='input'>https://daisyui.com</div>
         </div>
-        <div className='flex justify-center px-4 py-16 bg-base-200'>Hello!</div>
+        <div className='flex justify-center px-4 py-16 bg-base-200'>
+          Please Contact Me!
+        </div>
+        <div className='px-4'>Bangkok, Thailand</div>
       </div>
     </div>
   )

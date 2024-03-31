@@ -13,5 +13,18 @@
     "contact": "Contact",
     "": ""
   },
+  "footer": {
+    "service": "Services",
+    "company": "Company",
+    "legal": "Legal",
+    "about": "About",
+    "profile": "Profile",
+    "hire": "Hire",
+    "contact": "Contact",
+    "termOfUse": "Term of Use",
+    "privacyPolicy": "Privacy Policy",
+    "cookiePolicy": "Cookie Policy",
+    "": ""
+  },
   "": ""
 }

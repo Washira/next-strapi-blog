@@ -20,7 +20,7 @@ const fetchBlogPosts = async () => {
 const BlogPage = async () => {
   const posts = await fetchBlogPosts()
   return (
-    <div className='container'>
+    <div className='container h-svh'>
       <h1 className='text-3xl font-bold'>Blog</h1>
       <PostTable data={posts} />
     </div>

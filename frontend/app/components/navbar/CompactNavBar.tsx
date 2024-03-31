@@ -8,7 +8,7 @@ const CompactNavBar = ({ params }: { params: { locale: string } }) => {
   const { locale } = params
   const t = useTranslations('navbar')
   return (
-    <div className='navbar bg-base-100 container lg:hidden'>
+    <div className='navbar bg-base-100 container lg:hidden px-0'>
       <div className='navbar-start'>
         <div className='dropdown'>
           <div tabIndex={0} role='button' className='btn btn-ghost'>
