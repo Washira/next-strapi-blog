@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const PostTable = ({ data }: any) => {
+const PostTable = ({ data }: { data: any }) => {
   const posts = data?.data
 
   return (
@@ -44,7 +44,7 @@ const PostTable = ({ data }: any) => {
                 </td>
                 <td>Purple</td>
                 <th>
-                  <Link href={`/blog/${item.id}`}>
+                  <Link href={`blog/${item.id}`}>
                     <button className='btn btn-ghost btn-xs'>read</button>
                   </Link>
                 </th>

@@ -29,7 +29,6 @@ const Page = async ({
   searchParams: { [key: string]: string | string[] | undefined }
 }) => {
   const post: Post = await fetchPost(params.id)
-  console.log(`post on page: `, post)
 
   return <PostPage post={post} />
 }
