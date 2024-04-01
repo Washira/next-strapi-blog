@@ -10,7 +10,8 @@ const fetchPost = async (id: string) => {
   }
   try {
     const res = await fetch(
-      `${process.env.STRAPI_API_URL}/api/blogs/${id}`,
+      // `${process.env.STRAPI_API_URL}/api/blogs/${id}`,
+      `${process.env.STRAPI_API_URL}/api/blogs/${id}?populate=*`,
       options
     )
     const data = await res.json()

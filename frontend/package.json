@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "cookies-next": "^4.1.1",
+    "dayjs": "^1.11.10",
     "negotiator": "^0.6.3",
     "next": "14.1.4",
     "next-intl": "^3.10.0",
