@@ -7,11 +7,13 @@ const PostPage = ({ post }: { post: Post }) => {
   const createdDate = dayjs(createdAt).format('MMMM D, YYYY')
 
   return (
-    <div className='container'>
+    <div className='container px-4 lg:px-0'>
       <div className='text-center'>
-        <h1 className='font-bold text-2xl py-4'>{title}</h1>
+        <div className='py-8 space-y-2 text-start'>
+          <h1 className='font-bold text-2xl'>{title}</h1>
+          <div>public: {createdDate}</div>
+        </div>
         {img.data.map((item: any, index: number) => {
-          // console.log('item.attributes.url', item.attributes.url)
           return (
             <Image
               key={index}
@@ -24,17 +26,16 @@ const PostPage = ({ post }: { post: Post }) => {
             />
           )
         })}
-        <div>public: {createdDate}</div>
-        <div className='py-4'>
+        <div className='py-8'>
           {content.map((item: any, index: number) => {
             if (item.type === 'image') {
-              console.log('has image')
+              // console.log('has image')
               return (
                 <img
                   key={index}
                   src={item.image.url}
                   alt={item.image.name}
-                  className='w-1/2 mx-auto'
+                  className='w-1/2 mx-auto py-4'
                 />
               )
             }
