@@ -16,7 +16,6 @@ const LocaleToggle = () => {
 
     // slice the locale from the pathname
     const newUrl = pathname.replace(/^\/[a-z]{2}/, `/${locale}`)
-    console.log('newUrl', newUrl)
     router.push(newUrl)
   }
 

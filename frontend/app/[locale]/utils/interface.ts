@@ -31,6 +31,17 @@ export interface Post {
       ]
       img: any
       categories: Category
+      localizations: {
+        data: [
+          {
+            id: string
+            attributes: {
+              locale: string
+            }
+          }
+        ]
+      }
+      locale: string
     }
   }
 }

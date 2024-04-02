@@ -13,14 +13,14 @@ export const api = axios.create({
 
 api.interceptors.request.use((config) => {
   const timestamp =
+    new Date().toLocaleDateString('en-US') +
+    ' ' +
     new Date().toLocaleTimeString('en-US', {
       hour12: false,
       hour: '2-digit',
       minute: '2-digit',
       second: '2-digit',
-    }) +
-    ' ' +
-    new Date().toLocaleDateString('en-US')
+    })
   console.log(`[${timestamp}] ${config.method}: ${config.url}`)
   config.headers.Authorization = `Bearer ${process.env.STRAPI_API_TOKEN}`
   return config

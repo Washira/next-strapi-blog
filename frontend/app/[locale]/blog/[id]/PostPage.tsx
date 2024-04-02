@@ -29,7 +29,6 @@ const PostPage = ({ post }: { post: Post }) => {
         <div className='py-8'>
           {content.map((item: any, index: number) => {
             if (item.type === 'image') {
-              // console.log('has image')
               return (
                 <img
                   key={index}
