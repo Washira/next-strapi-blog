@@ -1,3 +1,9 @@
+export interface Params {
+  params: {
+    locale: string
+  }
+}
+
 export interface Category {
   data: {
     id: string
@@ -18,17 +24,19 @@ export interface Post {
       createdAt: string
       updatedAt: string
       publishedAt: string
-      content: [
-        {
-          type: string
-          children: [
+      content:
+        | [
             {
               type: string
-              text: string
+              children: [
+                {
+                  type: string
+                  text: string
+                }
+              ]
             }
           ]
-        }
-      ]
+        | any
       cover_img: any
       categories: Category
       localizations: {

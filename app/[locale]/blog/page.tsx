@@ -1,7 +1,7 @@
 import PostTable from '@/app/components/PostTable'
 import api from '@/app/lib/api'
 
-const fetchBlogPosts = async (locale: string = 'th') => {
+const fetchBlogs = async (locale: string = 'th') => {
   try {
     const res = await api.get(`/api/blogs?populate=*&locale=${locale}`)
     return res
@@ -13,7 +13,7 @@ const fetchBlogPosts = async (locale: string = 'th') => {
 
 const BlogPage = async ({ params }: { params: { locale: string } }) => {
   const { locale } = params
-  const posts = await fetchBlogPosts(locale)
+  const posts = await fetchBlogs(locale)
   return (
     <div className='page-container h-svh'>
       <h1 className='text-3xl font-bold'>Blog</h1>
