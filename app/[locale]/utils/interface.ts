@@ -4,16 +4,18 @@ export interface Params {
   }
 }
 
-export interface Category {
-  data: {
-    id: string
-    attributes: {
-      title: string
-      createdAt: string
-      updatedAt: string
-      publishedAt: string
+export interface Categories {
+  data: [
+    {
+      id: string
+      attributes: {
+        title: string
+        createdAt: string
+        updatedAt: string
+        publishedAt: string
+      }
     }
-  }
+  ]
 }
 
 export interface Post {
@@ -38,7 +40,7 @@ export interface Post {
           ]
         | any
       cover_img: any
-      categories: Category
+      categories: Categories
       localizations: {
         data: [
           {

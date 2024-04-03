@@ -1,8 +1,11 @@
 import Image from 'next/image'
 import { Post } from '@/app/[locale]/utils/interface'
+import Link from 'next/link'
 
 const BlogCard = (data: Post) => {
-  const { title, content, cover_img, createdAt } = data.data.attributes
+  const id = data.data.id
+  const { title, content, cover_img, categories, locale } = data.data.attributes
+
   /** description */
   let desc = content.find((atr: any) => atr.type === 'paragraph').children[0]
     .text
@@ -34,10 +37,17 @@ const BlogCard = (data: Post) => {
 
         <div className='card-actions justify-between'>
           <div className='card-actions'>
-            <div className='badge badge-outline'>Fashion</div>
-            <div className='badge badge-outline'>Products</div>
+            {categories?.data?.map((item: any, index: number) => {
+              return (
+                <div key={index} className='badge badge-outline'>
+                  {item.attributes.title}
+                </div>
+              )
+            })}
           </div>
-          <button className='btn btn-primary'>Read</button>
+          <Link href={`${locale}/blog/${id}`} className='btn btn-primary'>
+            Read
+          </Link>
         </div>
       </div>
     </div>
