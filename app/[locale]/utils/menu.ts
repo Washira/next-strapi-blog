@@ -4,6 +4,10 @@ const menu = [
     url: '/blog',
   },
   {
+    title: 'news',
+    url: '/news',
+  },
+  {
     title: 'about',
     url: '/about',
     subdirectory: [

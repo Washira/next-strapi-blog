@@ -8,7 +8,7 @@ const DefaultNavBar = ({ params }: { params: { locale: string } }) => {
   const { locale } = params
   const t = useTranslations('navbar')
   return (
-    <div className='navbar bg-base-100 container hidden lg:flex px-0'>
+    <div className='navbar bg-base-100 container hidden lg:flex px-0 relative'>
       <div className='navbar-start'>
         <Link href='/' className='text-xl'>
           {t('title')}
