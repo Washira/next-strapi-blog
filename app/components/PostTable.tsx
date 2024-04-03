@@ -28,7 +28,7 @@ const PostTable = ({ data }: { data: any }) => {
               { locale: locale2, id: id2 },
             ]
             /** image */
-            const { url, name } = post.attributes.img.data[0].attributes
+            const { url, name } = post.attributes.cover_img.data[0].attributes
             /** description */
             let desc = post.attributes.content.find(
               (atr: any) => atr.type === 'paragraph'

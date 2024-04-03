@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Post } from '@/app/[locale]/utils/interface'
 
 const PostPage = ({ post }: { post: Post }) => {
-  const { title, content, img, createdAt } = post.data.attributes
+  const { title, content, cover_img, createdAt } = post.data.attributes
   const createdDate = dayjs(createdAt).format('MMMM D, YYYY')
 
   return (
@@ -13,7 +13,8 @@ const PostPage = ({ post }: { post: Post }) => {
           <h1 className='font-bold text-2xl'>{title}</h1>
           <div>public: {createdDate}</div>
         </div>
-        {img.data.map((item: any, index: number) => {
+        {/** Cover Image */}
+        {cover_img.data.map((item: any, index: number) => {
           return (
             <Image
               key={index}
@@ -26,6 +27,7 @@ const PostPage = ({ post }: { post: Post }) => {
             />
           )
         })}
+        {/** Content */}
         <div className='py-8'>
           {content.map((item: any, index: number) => {
             if (item.type === 'image') {

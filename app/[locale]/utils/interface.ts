@@ -29,7 +29,7 @@ export interface Post {
           ]
         }
       ]
-      img: any
+      cover_img: any
       categories: Category
       localizations: {
         data: [
