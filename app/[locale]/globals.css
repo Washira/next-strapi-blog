@@ -3,5 +3,13 @@
 @tailwind utilities;
 
 .container {
-  @apply mx-auto pb-4;
+  @apply mx-auto;
+}
+
+.nav-container {
+  @apply container w-screen;
+}
+
+.page-container {
+  @apply container pb-4 px-4 md:px-0;
 }

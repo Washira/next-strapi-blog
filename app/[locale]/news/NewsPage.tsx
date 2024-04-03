@@ -1,4 +1,4 @@
 const NewsPage = () => {
-  return <div className='container'>News</div>
+  return <div className='page-container'>News</div>
 }
 export default NewsPage

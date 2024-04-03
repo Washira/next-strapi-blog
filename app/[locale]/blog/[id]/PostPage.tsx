@@ -7,7 +7,7 @@ const PostPage = ({ post }: { post: Post }) => {
   const createdDate = dayjs(createdAt).format('MMMM D, YYYY')
 
   return (
-    <div className='container px-4 lg:px-0'>
+    <div className='page-container px-4 lg:px-0'>
       <div className='text-center'>
         <div className='py-8 space-y-2 text-start'>
           <h1 className='font-bold text-2xl'>{title}</h1>

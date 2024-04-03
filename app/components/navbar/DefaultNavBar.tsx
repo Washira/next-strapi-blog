@@ -8,46 +8,50 @@ const DefaultNavBar = ({ params }: { params: { locale: string } }) => {
   const { locale } = params
   const t = useTranslations('navbar')
   return (
-    <div className='navbar bg-base-100 container hidden lg:flex px-0 relative'>
-      <div className='navbar-start'>
-        <Link href='/' className='text-xl'>
-          {t('title')}
-        </Link>
-      </div>
-      <div className='navbar-center'>
-        <div className='px-1 flex items-center gap-4'>
-          {menu.map((item) => (
-            <div key={item.title}>
-              {item?.subdirectory ? (
-                <div className='dropdown dropdown-end'>
-                  <div role='button' tabIndex={0} className='m-1'>
-                    {t(`${item.title}`)}
-                  </div>
-                  <ul
-                    tabIndex={0}
-                    className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52'
-                  >
-                    {item.subdirectory.map((subItem) => (
-                      <li key={subItem.title}>
-                        <Link href={subItem ? `/${locale}${subItem.url}` : '#'}>
-                          {t(`${subItem.title}`)}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : (
-                <Link href={item.url ? `/${locale}${item.url}` : '#'}>
-                  {t(`${item.title}`)}
-                </Link>
-              )}
-            </div>
-          ))}
+    <div className='nav-container hidden lg:flex relative'>
+      <div className='navbar px-0'>
+        <div className='navbar-start'>
+          <Link href='/' className='text-xl'>
+            {t('title')}
+          </Link>
         </div>
-      </div>
-      <div className='navbar-end'>
-        <LocaleDropdown />
-        <ThemeSwap />
+        <div className='navbar-center'>
+          <div className='px-1 flex items-center gap-4'>
+            {menu.map((item) => (
+              <div key={item.title}>
+                {item?.subdirectory ? (
+                  <div className='dropdown dropdown-end'>
+                    <div role='button' tabIndex={0} className='m-1'>
+                      {t(`${item.title}`)}
+                    </div>
+                    <ul
+                      tabIndex={0}
+                      className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52'
+                    >
+                      {item.subdirectory.map((subItem) => (
+                        <li key={subItem.title}>
+                          <Link
+                            href={subItem ? `/${locale}${subItem.url}` : '#'}
+                          >
+                            {t(`${subItem.title}`)}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : (
+                  <Link href={item.url ? `/${locale}${item.url}` : '#'}>
+                    {t(`${item.title}`)}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className='navbar-end'>
+          <LocaleDropdown />
+          <ThemeSwap />
+        </div>
       </div>
     </div>
   )

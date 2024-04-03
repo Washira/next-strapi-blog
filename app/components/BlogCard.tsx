@@ -1,10 +1,14 @@
+import Image from 'next/image'
+
 const BlogCard = () => {
   return (
     <div className='card sm:card-side bg-base-100 shadow-xl'>
       <figure>
-        <img
+        <Image
           src='https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg'
           alt='Movie'
+          width={400}
+          height={400}
         />
       </figure>
       <div className='card-body'>

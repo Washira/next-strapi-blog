@@ -15,7 +15,7 @@ const BlogPage = async ({ params }: { params: { locale: string } }) => {
   const { locale } = params
   const posts = await fetchBlogPosts(locale)
   return (
-    <div className='container h-svh'>
+    <div className='page-container h-svh'>
       <h1 className='text-3xl font-bold'>Blog</h1>
       <div className='py-4'>
         <PostTable data={posts} />

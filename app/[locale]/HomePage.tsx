@@ -6,7 +6,7 @@ const HomePage = () => {
   return (
     <div>
       <Hero />
-      <div className='container'>
+      <div className='page-container'>
         <div className='divider'>
           <h2 className='text-2xl font-semibold'>Recent Articles</h2>
         </div>
