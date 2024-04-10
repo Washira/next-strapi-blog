@@ -129,6 +129,7 @@ build
 
 # next.js
 /.next/
+.next/
 /out/
 
 # production

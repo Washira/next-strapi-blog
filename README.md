@@ -67,7 +67,7 @@ Great. You now have your project running. Let's add some data.
 
 ## Setting Up The Frontend
 
-Next we need to switch to our `/frontend` directory and create our `.env` file and paste in the following.
+Next we need to switch to our `/frontend` directory and create our `.env` or `.env.local` file and paste in the following.
 
 ```bash
 STRAPI_API_TOKEN=YOUR_STRAPI_API_TOKEN
