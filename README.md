@@ -43,6 +43,13 @@ API_TOKEN_SALT=tobemodified
 ADMIN_JWT_SECRET=tobemodified
 JWT_SECRET=tobemodified
 TRANSFER_TOKEN_SALT=tobemodified
+
+DATABASE_CLIENT=mysql
+DATABASE_HOST=localhost
+DATABASE_PORT=3306
+DATABASE_NAME=strapi
+DATABASE_USERNAME=root
+DATABASE_PASSWORD=root
 ```
 
 4. Start your project by running the following command:
