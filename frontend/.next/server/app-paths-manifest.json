@@ -1,0 +1,7 @@
+{
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/[locale]/blog/page": "app/[locale]/blog/page.js",
+  "/[locale]/news/page": "app/[locale]/news/page.js",
+  "/[locale]/page": "app/[locale]/page.js",
+  "/[locale]/[...not_found]/page": "app/[locale]/[...not_found]/page.js"
+}
