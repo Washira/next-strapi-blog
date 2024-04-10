@@ -114,6 +114,16 @@ dist
 build
 .strapi-updater.json
 
+############################
+# Next.js
+############################
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
 # testing
 /coverage
 
