@@ -17,7 +17,7 @@ exports.modules = {
   \******************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"Index":{"title":"Next Strapi Blog","":""},"navbar":{"title":"Next Strapi Blog","blog":"Blog","home":"Home","about":"About","news":"News","profile":"Profile","hire":"Hire","contact":"Contact","":""},"footer":{"service":"Services","company":"Company","legal":"Legal","about":"About","profile":"Profile","hire":"Hire","contact":"Contact","termOfUse":"Term of Use","privacyPolicy":"Privacy Policy","cookiePolicy":"Cookie Policy","":""},"":""}');
+module.exports = JSON.parse('{"Index":{"title":"DemoBlog","":""},"navbar":{"title":"DemoBlog","blog":"Blog","home":"Home","about":"About","news":"News","profile":"Profile","hire":"Hire","contact":"Contact","":""},"footer":{"service":"Services","company":"Company","legal":"Legal","about":"About","profile":"Profile","hire":"Hire","contact":"Contact","termOfUse":"Term of Use","privacyPolicy":"Privacy Policy","cookiePolicy":"Cookie Policy","":""},"":""}');
 
 /***/ })
 

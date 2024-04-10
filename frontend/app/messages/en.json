@@ -1,10 +1,10 @@
 {
   "Index": {
-    "title": "Next Strapi Blog",
+    "title": "DemoBlog",
     "": ""
   },
   "navbar": {
-    "title": "Next Strapi Blog",
+    "title": "DemoBlog",
     "blog": "Blog",
     "home": "Home",
     "about": "About",

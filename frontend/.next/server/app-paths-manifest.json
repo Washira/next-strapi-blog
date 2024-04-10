@@ -1,7 +1,5 @@
 {
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/[locale]/blog/page": "app/[locale]/blog/page.js",
-  "/[locale]/news/page": "app/[locale]/news/page.js",
+  "/[locale]/contact/page": "app/[locale]/contact/page.js",
   "/[locale]/page": "app/[locale]/page.js",
-  "/[locale]/[...not_found]/page": "app/[locale]/[...not_found]/page.js"
+  "/[locale]/blog/page": "app/[locale]/blog/page.js"
 }

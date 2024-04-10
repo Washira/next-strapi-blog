@@ -17,7 +17,7 @@ exports.modules = {
   \******************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"Index":{"title":"เน็กซ์สตราปี้บล็อก","":""},"navbar":{"title":"เน็กซ์สตราปี้บล็อก","blog":"บทความ","home":"หน้าแรก","about":"เกี่ยวกับเรา","news":"ข่าวสาร","profile":"โปรไฟล์","hire":"สมัครงาน","contact":"ติดต่อเรา","":""},"footer":{"service":"บริการ","company":"บริษัท","legal":"ข้อกำหนด","about":"เกี่ยวกับเรา","profile":"โปรไฟล์","hire":"สมัครงาน","contact":"ติดต่อเรา","termOfUse":"ข้อกำหนดการใช้งาน","privacyPolicy":"นโยบายความเป็นส่วนตัว","cookiePolicy":"นโยบายคุกกี้","":""},"":""}');
+module.exports = JSON.parse('{"Index":{"title":"เดโมบล็อก","":""},"navbar":{"title":"เดโมบล็อก","blog":"บทความ","home":"หน้าแรก","about":"เกี่ยวกับเรา","news":"ข่าวสาร","profile":"โปรไฟล์","hire":"สมัครงาน","contact":"ติดต่อเรา","":""},"footer":{"service":"บริการ","company":"บริษัท","legal":"ข้อกำหนด","about":"เกี่ยวกับเรา","profile":"โปรไฟล์","hire":"สมัครงาน","contact":"ติดต่อเรา","termOfUse":"ข้อกำหนดการใช้งาน","privacyPolicy":"นโยบายความเป็นส่วนตัว","cookiePolicy":"นโยบายคุกกี้","":""},"":""}');
 
 /***/ })
 

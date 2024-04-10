@@ -1,10 +1,5 @@
 {
   "pages": {
-    "/[locale]/blog/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/blog/page.js"
-    ],
     "/[locale]/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -16,30 +11,25 @@
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/not-found.js"
     ],
-    "/[locale]/page": [
+    "/[locale]/blog/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/page.js"
+      "static/chunks/app/[locale]/blog/page.js"
     ],
     "/[locale]/news/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/news/page.js"
     ],
+    "/[locale]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/page.js"
+    ],
     "/[locale]/contact/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/contact/page.js"
-    ],
-    "/[locale]/[...not_found]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/[...not_found]/page.js"
-    ],
-    "/[locale]/[...not_found]/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/[...not_found]/layout.js"
     ]
   }
 }

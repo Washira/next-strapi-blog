@@ -1097,7 +1097,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"Index":{"title":"Next Strapi Blog","":""},"navbar":{"title":"Next Strapi Blog","blog":"Blog","home":"Home","about":"About","news":"News","profile":"Profile","hire":"Hire","contact":"Contact","":""},"footer":{"service":"Services","company":"Company","legal":"Legal","about":"About","profile":"Profile","hire":"Hire","contact":"Contact","termOfUse":"Term of Use","privacyPolicy":"Privacy Policy","cookiePolicy":"Cookie Policy","":""},"":""}');
+module.exports = JSON.parse('{"Index":{"title":"DemoBlog","":""},"navbar":{"title":"DemoBlog","blog":"Blog","home":"Home","about":"About","news":"News","profile":"Profile","hire":"Hire","contact":"Contact","":""},"footer":{"service":"Services","company":"Company","legal":"Legal","about":"About","profile":"Profile","hire":"Hire","contact":"Contact","termOfUse":"Term of Use","privacyPolicy":"Privacy Policy","cookiePolicy":"Cookie Policy","":""},"":""}');
 
 /***/ }),
 
@@ -1108,7 +1108,7 @@ module.exports = JSON.parse('{"Index":{"title":"Next Strapi Blog","":""},"navbar
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"Index":{"title":"เน็กซ์สตราปี้บล็อก","":""},"navbar":{"title":"เน็กซ์สตราปี้บล็อก","blog":"บทความ","home":"หน้าแรก","about":"เกี่ยวกับเรา","news":"ข่าวสาร","profile":"โปรไฟล์","hire":"สมัครงาน","contact":"ติดต่อเรา","":""},"footer":{"service":"บริการ","company":"บริษัท","legal":"ข้อกำหนด","about":"เกี่ยวกับเรา","profile":"โปรไฟล์","hire":"สมัครงาน","contact":"ติดต่อเรา","termOfUse":"ข้อกำหนดการใช้งาน","privacyPolicy":"นโยบายความเป็นส่วนตัว","cookiePolicy":"นโยบายคุกกี้","":""},"":""}');
+module.exports = JSON.parse('{"Index":{"title":"เดโมบล็อก","":""},"navbar":{"title":"เดโมบล็อก","blog":"บทความ","home":"หน้าแรก","about":"เกี่ยวกับเรา","news":"ข่าวสาร","profile":"โปรไฟล์","hire":"สมัครงาน","contact":"ติดต่อเรา","":""},"footer":{"service":"บริการ","company":"บริษัท","legal":"ข้อกำหนด","about":"เกี่ยวกับเรา","profile":"โปรไฟล์","hire":"สมัครงาน","contact":"ติดต่อเรา","termOfUse":"ข้อกำหนดการใช้งาน","privacyPolicy":"นโยบายความเป็นส่วนตัว","cookiePolicy":"นโยบายคุกกี้","":""},"":""}');
 
 /***/ })
 
