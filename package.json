@@ -6,9 +6,11 @@
     "setup:frontend": "cd frontend && cp ../.env . && yarn",
     "setup:backend": "cd backend && cp ../.env . && yarn",
     "setup": "yarn install && yarn setup:frontend && yarn setup:backend",
-    "next": "yarn install && yarn clear && cd frontend && yarn dev",
-    "strapi": "yarn setup && yarn clear && cd backend && yarn develop",
+    "dev:next": "yarn setup && yarn clear && cd frontend && yarn dev",
+    "dev:strapi": "yarn setup && yarn clear && cd backend && yarn develop",
     "dev": "yarn setup && yarn clear && concurrently \"cd frontend && yarn dev\" \"cd backend && yarn develop\"",
+    "deploy:next": "yarn install && yarn clear && cd frontend && yarn dev",
+    "deploy:strapi": "yarn install && yarn clear && cd backend && yarn develop",
     "seed": "cd backend && yarn strapi import -f ../seed-data.tar.gz",
     "export": "cd backend && yarn strapi export --no-encrypt -f ../seed-data",
     "repo:upstream": "git fetch upstream && git merge upstream/main"
