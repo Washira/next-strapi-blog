@@ -1,4 +1,4 @@
-# Strapi Starter Next 13, Tailwind, Typescript and Strapi
+# Strapi Starter Next 14, Tailwind, Typescript and Strapi
 
 note: Next.js is in version 14 and Strapi is in version 4.0.0-beta.3
 
