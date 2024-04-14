@@ -11,14 +11,15 @@
     "dev:strapi": "yarn setup && yarn clear && cd backend && yarn develop",
     "dev": "yarn setup && yarn clear && concurrently \"cd frontend && yarn dev\" \"cd backend && yarn develop\"",
     "deploy:next": "yarn install && yarn clear && cd frontend && yarn && yarn dev",
-    "deploy:strapi": "yarn install && cd backend && yarn clear && yarn && yarn start",
+    "deploy:strapi": "yarn install && cd backend && yarn clear && yarn --network-timeout 100000 && yarn start",
     "seed": "cd backend && yarn strapi import -f ../seed-data.tar.gz",
     "export": "cd backend && yarn strapi export --no-encrypt -f ../seed-data",
     "repo:upstream": "git fetch upstream && git merge upstream/main"
   },
   "dependencies": {
     "concurrently": "^8.2.2",
-    "npm-check-updates": "^16.14.15"
+    "npm-check-updates": "^16.14.15",
+    "yarn": "^1.22.22"
   },
   "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }
