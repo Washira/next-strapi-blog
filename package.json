@@ -10,8 +10,6 @@
     "dev:next": "yarn setup && yarn clear && cd frontend && yarn dev",
     "dev:strapi": "yarn setup && yarn clear && cd backend && yarn develop",
     "dev": "yarn setup && yarn clear && concurrently \"cd frontend && yarn dev\" \"cd backend && yarn develop\"",
-    "deploy:next": "yarn install && yarn clear && cd frontend && yarn && yarn dev",
-    "deploy:strapi": "yarn install && cd backend && yarn clear && yarn --network-timeout 100000 && yarn start",
     "seed": "cd backend && yarn strapi import -f ../seed-data.tar.gz",
     "export": "cd backend && yarn strapi export --no-encrypt -f ../seed-data",
     "repo:upstream": "git fetch upstream && git merge upstream/main"
