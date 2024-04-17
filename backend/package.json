@@ -7,6 +7,8 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
+    "start:production": "export NODE_ENV=production yarn start && strapi start",
+    "build:production": "export NODE_ENV=production yarn build && strapi build",
     "strapi": "strapi",
     "clear": "rm -rf node_modules && yarn cache clean",
     "deploy": "yarn install && yarn && yarn build && yarn start"
