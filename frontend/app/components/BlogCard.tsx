@@ -14,9 +14,9 @@ const BlogCard = (data: Post) => {
   }
 
   return (
-    <div className='card sm:card-side bg-base-100 shadow-xl'>
+    <div className="card sm:card-side bg-base-100 shadow-xl">
       <figure>
-        {cover_img.data.map((item: any, index: number) => {
+        {cover_img?.data?.map((item: any, index: number) => {
           return (
             <Image
               key={index}
@@ -28,24 +28,24 @@ const BlogCard = (data: Post) => {
           )
         })}
       </figure>
-      <div className='card-body'>
-        <h2 className='card-title'>
+      <div className="card-body">
+        <h2 className="card-title">
           {title}
-          <div className='badge badge-secondary'>NEW</div>
+          <div className="badge badge-secondary">NEW</div>
         </h2>
         <p>{desc}</p>
 
-        <div className='card-actions justify-between'>
-          <div className='card-actions'>
+        <div className="card-actions justify-between">
+          <div className="card-actions">
             {categories?.data?.map((item: any, index: number) => {
               return (
-                <div key={index} className='badge badge-outline'>
+                <div key={index} className="badge badge-outline">
                   {item.attributes.title}
                 </div>
               )
             })}
           </div>
-          <Link href={`${locale}/blog/${id}`} className='btn btn-primary'>
+          <Link href={`${locale}/blog/${id}`} className="btn btn-primary">
             Read
           </Link>
         </div>

@@ -6,8 +6,8 @@ const PostTable = ({ data }: { data: any }) => {
   const descriptionClass = 'hidden md:block'
 
   return (
-    <div className='overflow-x-auto'>
-      <table className='table'>
+    <div className="overflow-x-auto">
+      <table className="table">
         <thead>
           <tr>
             <th>Title</th>
@@ -28,7 +28,16 @@ const PostTable = ({ data }: { data: any }) => {
               { locale: locale2, id: id2 },
             ]
             /** image */
-            const { url, name } = post.attributes.cover_img.data[0].attributes
+            let isNoImage: Boolean = !post?.attributes?.cover_img?.data
+            let url
+            let name
+            if (!post?.attributes?.cover_img?.data) {
+              url = ''
+              name = ''
+            } else {
+              url = post?.attributes?.cover_img?.data[0]?.attributes.url
+              name = post?.attributes?.cover_img?.data[0]?.attributes.name
+            }
             /** description */
             let desc = post.attributes.content?.find(
               (atr: any) => atr.type === 'paragraph'
@@ -44,21 +53,23 @@ const PostTable = ({ data }: { data: any }) => {
                     selectedId={post.id}
                     selectedLocale={post.attributes.locale}
                   >
-                    <div className='flex items-center gap-3'>
-                      <div className='avatar'>
-                        <div className='mask mask-squircle w-12 h-12'>
-                          <Image
-                            src={`${process.env.STRAPI_API_URL}${url}`}
-                            alt={name}
-                            width={48}
-                            height={48}
-                          />
+                    <div className="flex items-center gap-3">
+                      <div className="avatar">
+                        <div className="mask mask-squircle w-12 h-12">
+                          {isNoImage ? null : (
+                            <Image
+                              src={`${process.env.STRAPI_API_URL}${url}`}
+                              alt={name}
+                              width={48}
+                              height={48}
+                            />
+                          )}
                         </div>
                       </div>
                       <div>
-                        <div className='font-bold'>{post.attributes.title}</div>
-                        <div className='text-sm opacity-50'>
-                          <div className='badge badge-success badge-outline badge-xs'>
+                        <div className="font-bold">{post.attributes.title}</div>
+                        <div className="text-sm opacity-50">
+                          <div className="badge badge-success badge-outline badge-xs">
                             new
                           </div>
                         </div>
@@ -68,10 +79,10 @@ const PostTable = ({ data }: { data: any }) => {
                 </td>
                 <td className={descriptionClass}>{desc}</td>
                 <td>
-                  <div className='badge badge-info badge-outline badge-xs mr-1'>
+                  <div className="badge badge-info badge-outline badge-xs mr-1">
                     cat
                   </div>
-                  <div className='badge badge-info badge-outline badge-xs'>
+                  <div className="badge badge-info badge-outline badge-xs">
                     category
                   </div>
                 </td>
@@ -79,16 +90,6 @@ const PostTable = ({ data }: { data: any }) => {
             )
           })}
         </tbody>
-        {/* foot */}
-        {/* <tfoot>
-          <tr>
-            <th></th>
-            <th>Name</th>
-            <th>Job</th>
-            <th>Favorite Color</th>
-            <th></th>
-          </tr>
-        </tfoot> */}
       </table>
     </div>
   )
